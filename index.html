@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHub - Find Your Dream Job</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background-color: #2563eb;
+            color: white;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            padding: 14px 25px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .jobs {
+            padding: 50px 60px;
+        }
+
+        .jobs h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .job-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .job-card {
+            background: white;
+            width: 300px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .job-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .job-card p {
+            color: #666;
+            margin: 8px 0;
+        }
+
+        .apply-btn {
+            margin-top: 15px;
+            padding: 10px 18px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #application-section {
+    background-color: white;
+    margin: 40px 60px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#application-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#application-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#application-form input,
+#application-form textarea {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#application-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#application-form button {
+    padding: 14px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#application-form button:hover {
+    opacity: 0.9;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">JobHub</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Jobs</a>
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Find Your Dream Job</h1>
+
+        <p>
+            Search for jobs and take the next step in your career.
+        </p>
+
+        <div class="search-box">
+            <input type="text" id="search-keyword" placeholder="Job title or keyword">
+            <input type="text" id="search-location" placeholder="Location">
+            <button id="search-btn">Search Jobs</button>
+        </div>
+    </section>
+
+    <section class="jobs">
+        <h2>Latest Jobs</h2>
+
+        <div class="job-container">
+
+            <div class="job-card">
+                <h3>Frontend Developer</h3>
+                <p>Company: Tech Solutions</p>
+                <p>Location: Bangalore</p>
+                <p>Type: Full Time</p>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+
+            <div class="job-card">
+                <h3>Backend Developer</h3>
+                <p>Company: CodeWorks</p>
+                <p>Location: Hyderabad</p>
+                <p>Type: Full Time</p>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+
+            <div class="job-card">
+                <h3>UI/UX Designer</h3>
+                <p>Company: Creative Studio</p>
+                <p>Location: Mumbai</p>
+                <p>Type: Full Time</p>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+
+        </div>
+    </section>
+    <section id="application-section" class="application-section">
+        <section id="profile-section" class="application-section">
+    <h2>Create Your Profile</h2>
+
+    <form id="profile-form">
+
+        <input
+            type="text"
+            id="profile-name"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="profile-email"
+            placeholder="Email Address"
+            required
+        >
+
+        <input
+            type="text"
+            id="profile-phone"
+            placeholder="Phone Number"
+            required
+        >
+
+        <input
+            type="text"
+            id="profile-skills"
+            placeholder="Skills"
+            required
+        >
+
+        <input
+            type="text"
+            id="profile-education"
+            placeholder="Education"
+            required
+        >
+
+        <input
+            type="text"
+            id="profile-experience"
+            placeholder="Experience"
+            required
+        >
+
+        <button type="submit">Create Profile</button>
+
+    </form>
+</section>
+        <section id="post-job-section" class="application-section">
+    <h2>Post a Job</h2>
+
+    <form id="job-form">
+
+        <input
+            type="text"
+            id="application-job-title"
+            placeholder="Job Title"
+            required
+        >
+
+        <input
+            type="text"
+            id="company"
+            placeholder="Company Name"
+            required
+        >
+
+        <input
+            type="text"
+            id="job-location"
+            placeholder="Location"
+            required
+        >
+
+        <input
+            type="text"
+            id="job-type"
+            placeholder="Job Type (Full Time / Part Time)"
+            required
+        >
+
+        <textarea
+            id="job-description"
+            placeholder="Job Description"
+            required
+        ></textarea>
+
+        <button type="submit">Post Job</button>
+
+    </form>
+</section>
+    <h2>Apply for a Job</h2>
+
+    <form id="application-form">
+
+        <input
+            type="text"
+            id="applicant-name"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="applicant-email"
+            placeholder="Email Address"
+            required
+        >
+
+        <input
+            type="text"
+            id="job-title"
+            placeholder="Job Title"
+            required
+        >
+
+        <textarea
+            id="cover-letter"
+            placeholder="Write your cover letter..."
+            required
+        ></textarea>
+
+        <button type="submit">Submit Application</button>
+
+    </form>
+</section>
+<script src="/frontend/script.js"></script>
+</body>
+</html>
